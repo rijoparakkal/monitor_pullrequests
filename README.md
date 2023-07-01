@@ -2,6 +2,7 @@
 # Monitor Pullrequests
  - git.py is used to create a report on all pull
    requests(Open, In-progress and closed) created in last 1 week
+- Here I'm taking this repository as input : https://github.com/aws/eks-anywhere
 - It is also sending the report to manager using smtp
 - We are using three env variables for this script
 - SMTP_USER - Since we are using SES for sending mail we need to specify the SMTP username which is generated from AWS
