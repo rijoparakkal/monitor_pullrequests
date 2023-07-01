@@ -3,9 +3,21 @@ from datetime import datetime, timedelta
 import smtplib
 from email.mime.text import MIMEText
 import os
-smtp_user = os.environ.get("SMTP_USER")
-smtp_pass = os.environ.get("SMTP_PASS")
-receiver_email = os.environ.get("MANAGER_EMAIL")
+if 'SMTP_USER' in os.environ:
+    smtp_user = os.environ.get("SMTP_USER")
+else:
+    print('SMTP_USER variable does not exist.Please create ENV variable using export SMTP_USER="smtp_user"')
+    exit(1)
+if 'SMTP_PASS' in os.environ:
+    smtp_pass = os.environ.get("SMTP_PASS")
+else:
+    print('SMTP_PASS variable does not exist.Please create ENV variable using export SMTP_PASS="smtp_password"')
+    exit(1)
+if 'MANAGER_EMAIL' in os.environ:
+    receiver_email = os.environ.get("MANAGER_EMAIL")
+else:
+    print('MANAGER_EMAIL variable does not exist.Please create ENV variable using export MANAGER_EMAIL="manager_email"')
+    exit(1)
 #github api url
 URL = "https://api.github.com"
 #repository
