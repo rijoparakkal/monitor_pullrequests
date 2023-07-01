@@ -16,6 +16,6 @@
 ## Docker file and creating containers
 
 - We have containerized the script using docker and we need to pass 3 env variables while running the containers
-- Commands we need run
+- Commands we need to run
 - `docker build -t gitapp .`
 - `docker run -e SMTP_USER="*******" -e SMTP_PASS="****" -e "MANAGER_EMAIL=rijoparakkal@gmail.com" gitapp`
