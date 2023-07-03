@@ -25,11 +25,11 @@ OWNER = "aws"
 NAME = "eks-anywhere"
 # Date Range specifications
 start_date = (datetime.now() - timedelta(weeks=1)).strftime("%Y-%m-%d")
-# Query to search for all open pull requests which are created before start_date
+# Query to search for all open pull requests which are created after start_date
 query_open = f"repo:{OWNER}/{NAME} is:pr is:open created:>{start_date}"
-# Query to search for all draft/in-progress pull requests which are created before start_date
+# Query to search for all draft/in-progress pull requests which are created after start_date
 query_in_progress = f"repo:{OWNER}/{NAME} is:pr is:draft created:>{start_date}"
-# Query to search for all closed pull requests which are created before start_date
+# Query to search for all closed pull requests which are created after start_date
 query_closed = f"repo:{OWNER}/{NAME} is:pr is:closed created:>{start_date}"
 # Extra parameter specifications
 search_url = f"{URL}/search/issues"
